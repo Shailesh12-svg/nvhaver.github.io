@@ -70,8 +70,8 @@ lsi: False
 username: nvhaver
 repo: nvhaver.github.io
 branch: master
-relative_source: /
-destination: ./_site/
+relative_url: /
+destination: ./build/
 production_url:  https://nvhaver.github.io/
 source_url:  https://github.com/nvhaver/nvhaver.github.io/
 
