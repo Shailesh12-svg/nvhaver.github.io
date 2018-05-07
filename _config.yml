@@ -8,7 +8,7 @@ language: 'en-uk'
 baseurl: /
 
 # Website info
-title: NVH
+title: NVH's Site
 subtitle: Home
 description: Personal blog on technology
 cover: assets/images/blog-cover.jpg
