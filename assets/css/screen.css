@@ -199,6 +199,9 @@ body {
     overflow-y: hidden;
     height: 40px;
     font-size: 1.2rem;
+    background-color: #43434A99;
+    padding: 0 10px;
+    border-radius: 5px;
 }
 
 .site-nav-left {
