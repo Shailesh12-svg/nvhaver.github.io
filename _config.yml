@@ -11,9 +11,9 @@ baseurl: /
 title: NVH's Site
 subtitle: Home
 description: Personal blog on technology
-cover: assets/images/blog-cover.jpg
-logo: assets/images/blog-icon.png
-logo_dark: assets/images/favicon.png
+cover: assets/images/binarybanner.jpg
+#logo: assets/images/floppies.jpg
+#logo_dark: assets/images/favicon.png
 favicon: assets/images/favicon.png
 production_url: https://nvhaver.github.io/
 source_url: https://github.com/nvhaver/nvhaver.github.io/
@@ -24,7 +24,9 @@ subscribers: False # you need to connect an external service for this to work,
 # if 'True' the submit button is disabled for now, but you can change that
 # by editing `_includes/subscribe-form.html`
 #twitter: tryghost # replace by your username
-#facebook: ghost # replace by your username
+facebook: nvhaver # replace by your username
+github: nvhaver
+linkedin: nick-van-haver 
 
 # Disqus
 disqus: False
