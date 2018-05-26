@@ -14,7 +14,7 @@ author: nvhaver
 
 The following quotes resonate with my life experience and touch on the deeper layers of life and society. They thus have earned a special place on the site.
 
-- How do we measure wealth? - Jeremy Blake
+- How do we measure wealth? - Jeremy Blake (Sing me to sleep)
 - Worry is a waste of time. - Sheyla (Mr. Robot)
 - Every day we change the world. - Elliot's dad (Mr. Robot)
 - True courage is about being honest to yourself when it is most difficult. - Elliot's dad (Mr. Robot)

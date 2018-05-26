@@ -20,6 +20,10 @@ author: nvhaver
 - JavaScript
 - TypeScript
 
+### Inspirational sites
+
+-  [Coolors.co](https://coolors.co/)
+
 ### Tools
 
 - Git

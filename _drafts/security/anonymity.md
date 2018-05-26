@@ -15,6 +15,12 @@ The goal of this project is to become truely anonymous on the internet. Through 
 # Disposable mail accounts
 - Guerrila mail
 
+# Privacy
+
+- Use FreeTube instead of YouTube
+- Use Firefox instead of Chrome
+- Use Duckduckgo instead of Google
+
 # VPN Proxy
 
 # To research
