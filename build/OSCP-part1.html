@@ -11,7 +11,7 @@
 
 
 
-    <title>OSCP - Part 0 - Overview</title>
+    <title>OSCP - Part 1 - The Phases of Pentesting</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
@@ -27,26 +27,26 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="Personal blog on technology" />
     <link rel="shortcut icon" href="http://localhost:4000/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="http://localhost:4000/OSCP-part0" />
+    <link rel="canonical" href="http://localhost:4000/OSCP-part1" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="NVH's Site" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="OSCP - Part 0 - Overview" />
-    <meta property="og:description" content="As I have a deep interest in cybersecurity, I felt is time to get serious and to set a clear goal. So my goal will be the Offensive Security Certified Professional (OSCP) certificate. Why OSCP? There are many other certificates which I could pursue, but the OSCP certificate to me" />
-    <meta property="og:url" content="http://localhost:4000/OSCP-part0" />
-    <meta property="og:image" content="http://localhost:4000/assets/images/security.jpg" />
+    <meta property="og:title" content="OSCP - Part 1 - The Phases of Pentesting" />
+    <meta property="og:description" content="In this second installment of the OSCP series, we will take a deeper look into the overall structure of a penetration test, as it provides us a framework to build our hacking skills onto. It is also the first thing that we read in the introduction of Georgia Weidman’s book" />
+    <meta property="og:url" content="http://localhost:4000/OSCP-part1" />
+    <meta property="og:image" content="http://localhost:4000/assets/images/meeting-notes.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/nvhaver" />
     <meta property="article:author" content="https://www.facebook.com/nvhaver" />
-    <meta property="article:published_time" content="2018-05-27T15:00:00+02:00" />
-    <meta property="article:modified_time" content="2018-05-27T15:00:00+02:00" />
+    <meta property="article:published_time" content="2018-05-27T16:00:00+02:00" />
+    <meta property="article:modified_time" content="2018-05-27T16:00:00+02:00" />
     <meta property="article:tag" content="Security" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="OSCP - Part 0 - Overview" />
-    <meta name="twitter:description" content="As I have a deep interest in cybersecurity, I felt is time to get serious and to set a clear goal. So my goal will be the Offensive Security Certified Professional (OSCP) certificate. Why OSCP? There are many other certificates which I could pursue, but the OSCP certificate to me" />
+    <meta name="twitter:title" content="OSCP - Part 1 - The Phases of Pentesting" />
+    <meta name="twitter:description" content="In this second installment of the OSCP series, we will take a deeper look into the overall structure of a penetration test, as it provides us a framework to build our hacking skills onto. It is also the first thing that we read in the introduction of Georgia Weidman’s book" />
     <meta name="twitter:url" content="http://localhost:4000/" />
-    <meta name="twitter:image" content="http://localhost:4000/assets/images/security.jpg" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/meeting-notes.jpg" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="NVH's Site" />
     <meta name="twitter:label2" content="Filed under" />
@@ -65,18 +65,18 @@
         "name": "NVH's Site",
         "logo": "http://localhost:4000/"
     },
-    "url": "http://localhost:4000/OSCP-part0",
+    "url": "http://localhost:4000/OSCP-part1",
     "image": {
         "@type": "ImageObject",
-        "url": "http://localhost:4000/assets/images/security.jpg",
+        "url": "http://localhost:4000/assets/images/meeting-notes.jpg",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://localhost:4000/OSCP-part0"
+        "@id": "http://localhost:4000/OSCP-part1"
     },
-    "description": "As I have a deep interest in cybersecurity, I felt is time to get serious and to set a clear goal. So my goal will be the Offensive Security Certified Professional (OSCP) certificate. Why OSCP? There are many other certificates which I could pursue, but the OSCP certificate to me"
+    "description": "In this second installment of the OSCP series, we will take a deeper look into the overall structure of a penetration test, as it provides us a framework to build our hacking skills onto. It is also the first thing that we read in the introduction of Georgia Weidman’s book"
 }
     </script>
 
@@ -89,7 +89,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="OSCP - Part 0 - Overview" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="OSCP - Part 1 - The Phases of Pentesting" href="/feed.xml" />
 
 
 </head>
@@ -163,87 +163,132 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">OSCP - Part 0 - Overview</h1>
+                <h1 class="post-full-title">OSCP - Part 1 - The Phases of Pentesting</h1>
             </header>
 
             
-            <figure class="post-full-image" style="background-image: url(/assets/images/security.jpg)">
+            <figure class="post-full-image" style="background-image: url(/assets/images/meeting-notes.jpg)">
             </figure>
             
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
-                    <p>As I have a deep interest in cybersecurity, I felt is time to get serious and to set a clear goal. So my goal will be the <a href="https://www.offensive-security.com/information-security-certifications/oscp-offensive-security-certified-professional/">Offensive Security Certified Professional (OSCP)</a> certificate.</p>
+                    <p>In this second installment of the OSCP series, we will take a deeper look into the overall structure of a penetration test, as it provides us a framework to build our hacking skills onto. It is also the first thing that we read in the introduction of <a href="https://www.nostarch.com/pentesting">Georgia Weidman’s book “Penetration Testing - A Hands-On Introduction to Hacking” from No Starch Press</a>.</p>
 
-<h2 id="why-oscp">Why OSCP?</h2>
+<p>The phases described by Weidman are taken from the <a href="http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines">Penetration Testing Execution Standard (PTES)</a>. This standard also comes with a technical guideline which details each phase and indicates the tools that can be used.</p>
 
-<p>There are many other certificates which I could pursue, but the OSCP certificate to me feels like the real deal. The exam consists of an 24 hour penetration test which puts your skills to the test. The test simulates a real pentest by providing a network with targets of varying configurations and operating systems on it. The ones in scope need to be enumerated and exploited until administrative privileges are obtained. Like during a real pentest, everything needs to be documented. The final penetration test report should include in-depth notes and screenshots detailing the findings. As stated on the <a href="https://www.offensive-security.com/information-security-certifications/oscp-offensive-security-certified-professional/">OSCP page</a>: Points are awarded for each compromised host, based on their difficulty and level of access obtained.</p>
-
-<p>Once you have earned the OSCP certificate, you are able to:</p>
+<p>Globally speaking, a penetration test has the following seven phases:</p>
 
 <ul>
-  <li>Use multiple information gathering techniques to identify and enumerate targets running various operating systems and services.</li>
-  <li>Write basic scripts and tools to aid in the penetration testing process.</li>
-  <li>Analyze, correct, modify, cross-compile, and port public exploit code.</li>
-  <li>Successfully conduct both remote and client side attacks.</li>
-  <li>Identify and exploit XSS, SQL injection, and file inclusion vulnerabilities in web applications.</li>
-  <li>Deploy tunneling techniques to bypass firewalls.</li>
-  <li>Demonstrate creative problem solving and lateral thinking</li>
+  <li>Pre-engagement: Defining scope, goals and reporting format with the client.</li>
+  <li>Information Gathering: Search for publicly available information and potential ways to connect to the target systems.</li>
+  <li>Threat Modeling: Determine value of findings and impact if breach occurs.</li>
+  <li>Vulnerability Analysis: Discovery of vulnerabilities to take advantage of.</li>
+  <li>Exploitation: Actual exploitation of the found vulnerabilities.</li>
+  <li>Post-exploitation: Discovery of additional information after breaching the environment.</li>
+  <li>Reporting: Summarizing the results of the penetration test for both executives and technical staff.</li>
 </ul>
 
-<p>One caveat is that you can only take the exam after completing <a href="https://www.offensive-security.com/information-security-training/penetration-testing-training-kali-linux/">Offensive Security’s Penetration Testing with Kali Linux training course (PWK)</a>. At this time, this is an online training which you can enroll in for $800. It provides you with a 30-day access to a lab environment over VPN.</p>
+<p>Here I will briefly discuss each phase, but the full elaboration will be done in later blogs posts.</p>
 
-<h2 id="other-certificates">Other certificates</h2>
+<h2 id="pre-engagement">Pre-engagement</h2>
 
-<p>After I will have obtained the OSCP certificate, I will start looking for a new challenge. The other certificates offered by Offensive Security also seem very interesting:</p>
+<p>In this phase the goal is to ensure both parties, the client and the pentester, are on the same page about the scope of the penetration test. The client needs to be aware that a penetration test is more intrusive than a regular assessment. As such it might uncover unexpected issues and may lead to sticky situations.</p>
+
+<p>Some important questions to pose in this first contact are:</p>
 
 <ul>
-  <li><a href="https://www.offensive-security.com/information-security-certifications/osce-offensive-security-certified-expert/">Offensive Security Certified Expert (OSCE)</a></li>
-  <li><a href="https://www.offensive-security.com/information-security-certifications/osee-offensive-security-exploitation-expert/">Offensive Security Exploitation Expert (OSEE)</a></li>
-  <li><a href="https://www.offensive-security.com/information-security-certifications/oswe-offensive-security-web-expert/">Offensive Security Web Expert (OSWE)</a></li>
-  <li><a href="https://www.offensive-security.com/information-security-certifications/oswp-offensive-security-wireless-professional/">Offensive Security Wireless Professional (OSWP)</a></li>
+  <li>What prompted the client to get a pentest?</li>
+  <li>What exposures is the client most worried about?</li>
+  <li>Are there fragile devices present which the pentester needs to approach carefully?</li>
+  <li>What is the goal of the client’s business?</li>
 </ul>
 
-<p>For the moment however, I think I will have my hands full with the OSCP challenge.</p>
+<p>The goal here is to find out what matters most to the client. This way we ensure the pentest will be targeted and that it will provide as much added value as possible. For one client an hour of downtime may have a completely different impact than for others.</p>
 
-<h2 id="getting-started">Getting started</h2>
-
-<p>Now that we have a clear goal set out, it is time to start working on our knowledge and skills in the field of penetration testing, but where do we start?</p>
-
-<p>Let’s take a look at the contents of the PWK course. An outline can be found <a href="https://www.offensive-security.com/documentation/penetration-testing-with-kali.pdf">on the Offensive Security website</a>. Here we can see several big topic to cover such as Kali Linux, programming, scripting, exploits and pentesting as a whole. However, it’s not practical to start taking on these topics at random, we need a more structured approach.</p>
-
-<p><a href="https://www.cybrary.it">Cybrary</a> provides us a bit more structure by giving us a <a href="https://www.cybrary.it/0p3n/prep-guide-offsecs-pwkoscp/">short “must read” list</a>. They also provide a curriculum to follow which includes their video tutorials, but I prefer to read the original source books instead.</p>
-
-<p>After looking around on the web, I identified the following books as the most comprehensive sources:</p>
+<p>The scope of the pentest is one of the most important topics to discuss in this phase. In this regard, the following questions apply:</p>
 
 <ul>
-  <li><a href="https://www.nostarch.com/pentesting">Georgia Weidman’s book “Penetration Testing - A Hands-On Introduction to Hacking” from No Starch Press</a></li>
-  <li><a href="https://nostarch.com/metasploit">David Kennedy, Jim O’Gorman, Devon Kearns, and Mati Aharoni’s “Metasploit - The Penetration Tester’s Guide” from No Starch Press</a></li>
-  <li><a href="https://repo.zenk-security.com/Programmation/Violent%20Python%20a%20Cookbook%20for%20Hackers-Forensic%20Analysts-Penetration%20testers%20and%20Security%20Engineers.pdf">TJ. O’Connor’s book “Violent Python - A Cookbook for Hackers, Forensic Analysts, Penetration Testers and Security Engineers” from Syngress</a></li>
-  <li><a href="https://www.packtpub.com/networking-and-servers/advanced-penetration-testing-highly-secured-environments-ultimate-security-gu">Lee Allen’s “Advanced Penetration Testing for Highly-Secured Environments: The Ultimate Security Guide” from Packt</a></li>
+  <li>Which devices are in scope and which are not? (Based on IP address or hostname)</li>
+  <li>Which actions are allowed? (i.e. can services or host be brought down or should the test be limited to the detection of vulnerabilities?)</li>
+  <li>Does the client understand that performing a port scan could bring down a server or router?</li>
+  <li>Is social engineering allowed?</li>
 </ul>
 
-<p>There are many other books on the topics contained in the OSCP certification, but for now I will limit myself to the four above. There are also many other sources from people who attempted the OSCP challenge around the Web, which I list here as honorable mentions. I might dig deeper into these when I need some more details or would like to know about the experience of others.</p>
+<p>Next to the scope, the testing window needs to be determined as well. It might be the case that the client does not want the testing to be done during business hours.</p>
+
+<p>When things would get hairy, you also need to be prepared. First of all contact information needs to be gathered so that when an issue or unexpected result would present itself, someone on the client’s side can be contacted. Questions that apply here are:</p>
 
 <ul>
-  <li><a href="https://sushant747.gitbooks.io/total-oscp-guide/content/">https://sushant747.gitbooks.io/total-oscp-guide/content/</a></li>
-  <li><a href="http://niiconsulting.com/checkmate/2017/06/a-detail-guide-on-oscp-preparation-from-newbie-to-oscp/">http://niiconsulting.com/checkmate/2017/06/a-detail-guide-on-oscp-preparation-from-newbie-to-oscp/</a></li>
-  <li><a href="http://desmoines.issa.org/images/2017-February-Nate-Subra-OSCP.pdf">http://desmoines.issa.org/images/2017-February-Nate-Subra-OSCP.pdf</a></li>
+  <li>Who needs to be contacted when something serious is found?</li>
+  <li>Is there someone who can be contacted 24/7?</li>
+  <li>How are these issues communicated? (e.g. email encryption)</li>
+  <li>What actions should be taken in case something serious happens?</li>
 </ul>
 
-<h2 id="lets-try-harder">Let’s try harder</h2>
+<p>In addition to these precautions, a “get out of jail free” card should be negotiated. This card needs to prove that you are authorized to perform the penetration test. When the system under test is hosted or managed by a third party, this card should also cover the terms negotiated by the client with the third party. Regardless, the contract must include a statement which limits the tester’s liability in case something unexpected happens and a written permission to perform the penetration test.</p>
 
-<p>So now that we have everything ready to get started, I will start by reading the book by Georgia Weidman. In the next posts of this series I will highlight my findings on additional sources and provide a small summary of the things I’ve learned.</p>
+<p>As a pentest deals with highly sensitive information on the client and its customers, the contract also needs to include a nondisclosure agreement (NDA) clause.</p>
 
-<p>Let’s get busy!</p>
+<p>Finally, as this is a service, payment terms need to be negotiated.</p>
+
+<h2 id="information-gathering">Information Gathering</h2>
+
+<p>A more formal name for this process is Open Source Intelligence (OSINT). This phase involves looking for information online and through passive scanners. Footprinting, banner grabbing and version scanning also covered in this phase, as long as this is not done in an active way.</p>
+
+<h2 id="vulnerability-analysis">Vulnerability Analysis</h2>
+
+<p>Once enough information has been collected, it is time to actively discover vulnerabilities. These vulnerabilities must be analyzed to determine whether they can be used in the next steps. All vulnerabilities need to be logged as findings, but not all vulnerabilities might be useful as they might alert users and administrators about the presence of the tester.</p>
+
+<p>To discover these vulnerabilities, vulnerability scanners can be used. The difference with the previous phase is that here the tester will use active ways of scanning. To determine the severity and the use of a vulnerability, several online sources can be used, such as vulnerability databases.</p>
+
+<p>Even though there are many automated ways to discover these vulnerabilities, manual testing cannot be underestimated and will always be required in this phase.</p>
+
+<h2 id="exploitation">Exploitation</h2>
+
+<p>In this phase the vulnerabilities which have been discovered and deemed useful are exploited. This is where tools like Metasploit come into play.</p>
+
+<h2 id="post-exploitation">Post-exploitation</h2>
+
+<p>In the previous phase we executed exploits to gain access to systems. Now the question is, what can we do with these systems? The answer is pivoting. Pivoting is leveraging an obtained access to gain additional access and privileges on other systems. For instance, if the system is part of a domain, a pentester would try to gain access to the domain controller for that domain. One way to gain additional access would be to dump out hashed passwords and attempt to reverse the hashing. Furthermore, we can assess the risk of the hack we performed by looking for interesting files.</p>
+
+<h2 id="reporting">Reporting</h2>
+
+<p>In this final phase, we collect all our findings and present them to the client. Note that this means that the information must be readable for executives, while technical and detailed enough for the technical staff who needs to act on the findings. Also, it is important to not only point out the issues in the environments and systems, but also what has been done correctly. In order to ensure clarity in the report, it should always contain both an executive summary and a detailed technical report.</p>
+
+<p>The executive summary should include:</p>
+
+<ul>
+  <li>Background: Provides definitions of terms which may be unfamiliar to executives. It also provides the purpose and goals of the test.</li>
+  <li>Overall Security Posture: An overview of the current state of the overall security level, including which general underlying issues were found.</li>
+  <li>Risk Profile: A comparison of the current security posture compared to other similar organizations. The profile should be expressed in terms of priorities (high/moderate/low) and should clarify the meaning of these levels.</li>
+  <li>General findings: An overview of the general issues found with their frequency, the efficiency of the countermeasures put in place and other statistics.</li>
+  <li>Recommendation Summary: The high-level steps to be taken to remedy the issues discovered during the test.</li>
+  <li>Strategic Road Map: Long- and short-term goals for the client to improve the security posture.</li>
+</ul>
+
+<p>The technical report should at least cover all phases of the pentest:</p>
+
+<ul>
+  <li>Introduction: Contains the details on scope, contacts, etc.</li>
+  <li>Information Gathering: The client’s internet footprint and other information retrieved during this phase.</li>
+  <li>Vulnerability Assessment: Vulnerabilities found and their impact.</li>
+  <li>Exploitation: Actions performed and their results.</li>
+  <li>Post-Exploitation: Any escalation of privileges or pivoting performed.</li>
+  <li>Risk/Exposure: An estimation of the loss incurred if the attack would have been performed by an attacker. Quantitatively describes the risk assessed by the pentest.</li>
+  <li>Conclusion: Final overview of the test.</li>
+</ul>
+
+<h2 id="whats-next">What’s next?</h2>
+
+<p>So next up is diving into <a href="http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines">the technical guidelines of the PTES</a> and reading the next chapters in <a href="https://www.nostarch.com/pentesting">Weidman’s book</a>. I will be skipping the chapters on the environment setup and programming as these will be covered outside this series.</p>
 
 <h2 id="references">References</h2>
 
 <ul>
-  <li><a href="https://www.offensive-security.com/">The official Offensive website</a></li>
-  <li><a href="https://www.cybrary.it">Cybrary</a></li>
+  <li><a href="https://www.nostarch.com/pentesting">Georgia Weidman’s book “Penetration Testing - A Hands-On Introduction to Hacking” from No Starch Press</a></li>
+  <li><a href="http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines">Penetration Testing Execution Standard (PTES)</a></li>
 </ul>
-
 
                 </div>
             </section>
@@ -313,14 +358,14 @@ into the {body} of the default.hbs template -->
                                 
                                   
                                     
-                                        
-                                        
-                                            <li><a href="/OSCP-part1">OSCP - Part 1 - The Phases of Pentesting</a></li>
-                                        
-                                    
                                   
                                 
                                   
+                                    
+                                        
+                                        
+                                            <li><a href="/OSCP-part0">OSCP - Part 0 - Overview</a></li>
+                                        
                                     
                                   
                                 
@@ -339,15 +384,18 @@ into the {body} of the default.hbs template -->
 
             <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
             
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
                 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/OSCP-part1">
-                <div class="post-card-image" style="background-image: url(/assets/images/meeting-notes.jpg)"></div>
+            <a class="post-card-image-link" href="/OSCP-part0">
+                <div class="post-card-image" style="background-image: url(/assets/images/security.jpg)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/OSCP-part1">
+            <a class="post-card-content-link" href="/OSCP-part0">
                 <header class="post-card-header">
                     
                         
@@ -357,10 +405,10 @@ into the {body} of the default.hbs template -->
                         
                     
 
-                    <h2 class="post-card-title">OSCP - Part 1 - The Phases of Pentesting</h2>
+                    <h2 class="post-card-title">OSCP - Part 0 - Overview</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    <p>In this second installment of the OSCP series, we will take a deeper look into the overall structure of a penetration test, as it provides us a framework to build our hacking skills</p>
+                    <p>As I have a deep interest in cybersecurity, I felt is time to get serious and to set a clear goal. So my goal will be the Offensive Security Certified Professional (OSCP) certificate.</p>
                 </section>
             </a>
             <footer class="post-card-meta">
@@ -380,9 +428,6 @@ into the {body} of the default.hbs template -->
 
             
 
-            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
-            
-
         </div>
     </div>
 </aside>
@@ -396,18 +441,18 @@ into the {body} of the default.hbs template -->
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">OSCP - Part 0 - Overview</div>
+    <div class="floating-header-title">OSCP - Part 1 - The Phases of Pentesting</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=OSCP+-+Part+0+-+Overview&amp;url=https://nvhaver.github.io/OSCP-part0"
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=OSCP+-+Part+1+-+The+Phases+of+Pentesting&amp;url=https://nvhaver.github.io/OSCP-part1"
             onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
 
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://nvhaver.github.io/OSCP-part0"
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://nvhaver.github.io/OSCP-part1"
             onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
 

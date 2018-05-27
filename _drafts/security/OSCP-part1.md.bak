@@ -1,0 +1,110 @@
+---
+layout: post
+current: post
+cover: 'assets/images/security.jpg'
+navigation: True
+title: 'OSCP - Part 1 - The Phases of Pentesting'
+date: 2018-05-27 14:00:00
+tags: security
+class: post-template
+subclass: 'post'
+author: nvhaver
+---
+In this second installment of the OSCP series, we will take a deeper look into the overall structure of a penetration test, as it provides us a framework to build our hacking skills onto. It is also the first thing that we read in [Georgia Weidman's book "Penetration Testing - A Hands-On Introduction to Hacking" from No Starch Press](https://www.nostarch.com/pentesting).
+
+The phases described by Weidman are taken from the [Penetration Testing Execution Standard (PTES)](http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines). This standard also comes with a technical guideline which details each phase and indicates the tools that can be used.
+
+Globally speaking, a penetration test has the following seven phases:
+
+- Pre-engagement: Defining scope, goals and reporting format with the client.
+- Information Gathering: Search for publicly available information and potential ways to connect to the target systems.
+- Threat Modeling: Determine value of findings and impact if breach occurs. 
+- Vulnerability Analysis: Discovery of vulnerabilities to take advantage of.
+- Exploitation: Actual exploitation of the found vulnerabilities.
+- Post-exploitation: Discovery of additional information after breaching the environment.
+- Reporting: Summarizing the results of the penetration test for both executives and technical staff.
+
+Here I will briefly discuss each phase, but the full elaboration will be done in later blogs posts.
+
+## Pre-engagement
+
+In this phase the goal is to ensure both parties, the client and the pentester, are on the same page about the scope of the penetration test. The client needs to be aware that a penetration test is more intrusive than a regular assessment. As such it might uncover unexpected issues and may lead to sticky situations.
+
+Some important questions to pose in this first contact are:
+
+- What prompted the client to get a pentest?
+- What exposures is the client most worried about?
+- Are there fragile devices present which the pentester needs to approach carefully?
+- What is the goal of the client's business?
+
+The goal here is to find out what matters most to the client. This way we ensure the pentest will be targeted and that it will provide as much added value as possible. For one client an hour of downtime may have a completely different impact than for others.
+
+The scope of the pentest is one of the most important topics to discuss in this phase. In this regard, the following questions apply:
+
+- Which devices are in scope and which are not? (Based on IP address or hostname)
+- Which actions are allowed? (i.e. can services or host be brought down or should the test be limited to the detection of vulerabilities?)
+- Does the client understand that performing a port scan could bring down a server or router?
+- Is social engineering allowed? 
+
+Next to the scope, the testing window needs to be determined as well. It might be the case that the client does not want the testing to be done during business hours.
+
+When things would get hairy, you also need to be prepared. First of all contact information needs to be gathered so that when an issue or unexpected result would present itself, someone on the client's side can be contacted. Questions that apply here are:
+
+- Who needs to be contacted when something serious is found?
+- Is there someone who can be contacted 24/7?
+- How are these issues communicated? (e.g. email encryption)
+- What actions should be taken in case something serious happens?
+
+In addition to these precausions, a "get out of jail free" card should be negotiated. This card needs to prove that you are authorized to perform the penetration test. When the system under test is hosted or managed by a third party, this card should also cover the terms negotiated by the client with the third party. Regardless, the contract must include a statement which limits the tester's liability in case something unexpected happens and a written permission to perform the penetration test.
+
+As a pentest deals with highly sensitive information on the client and its customers, the contract also needs to include a nondisclosure agreement (NDA) clause.
+
+Finally, as this is a service, payment terms need to be negotiated.
+
+## Information Gathering
+
+A more formal name for this process is Open Source Intelligence (OSINT). This phase involves looking for information online and through passive scanners. Footprinting, banner grabbing and version scanning also covered in this phase, as long as this is not done in an active way. 
+
+### Vulnerability Analysis
+
+Once enough information has been collected, it is time to actively discover vulnerabilities. These vulnerabilities must be analysed to determine whether they can be used in the next steps. All vulnerabilities need to be logged as findings, but not all vulnerabilities might be useful as they might alert users and administrators about the presence of the tester.
+
+To discover these vulnerabilities, vulnerability scanners can be used. The difference with the previous phase is that here the tester will use active ways of scanning. To determine the severity and the use of a vulnerability, several online sources can be used, such as vulnerability databases.
+
+Even though there are many automated ways to discover these vulnerabilities, manual testing cannot be underestimated and will always be required in this phase.
+
+## Exploitation
+
+In this phase the vulnerabilities which have been discovered and deemed useful are exploited. This is where tools like Metasploit come into play. 
+
+## Post-exploitation
+
+In the previous phase we executed exploits to gain access to systems. Now the question is, what can we do with these systems? The answer is pivoting. Pivoting is leveraging an obtained access to gain additional access and privileges on other systems. For instance, if the system is part of a domain, a pentester would try to gain access to the domain controller for that domain. One way to gain additional access would be to dump out hashed passwords and attempt to reverse the hashing. Furthermore, we can assess the risk of the hack we performed by looking for interesting files.
+
+## Reporting
+
+In this final phase, we collect all our findings and present them to the client. Note that this means that the information must be readible for executives, while technical and detailed enough for the technical staff who needs to act on the findings. Also, it is important to not only point out the issues in the environments and systems, but also what has been done correctly. In order to ensure clarity in the report, it should always contain both an executive summary and a detailed technical report.
+
+The executive summary should include:
+
+- Background: Provides definitions of terms which may be unfamiliar to executives. It also provides the purpose and goals of the test.
+- Overall Security Posture: An overview of the current state of the overall security level, including which general underlying issues were found.
+- Risk Profile: A comparison of the current security posture compared to other similar organisations. The profile should be expressed in terms of priorities (high/moderate/low) and should clarify the meaning of these levels.
+- General findings: An overview of the general issues found with their frequency, the efficiency of the countermeasures put in place and other statistics.
+- Recommendation Summary: The high-level steps to be taken to remediate the issues discovered during the test.
+- Strategic Road Map: Long- and short-term goals for the client to improve the security posture.
+
+The technical report should at least cover all phases of the pentest:
+
+- Introduction: Contains the details on scope, contacts, etc.
+- Information Gathering: The client's internet footprint and other information retrieved during this phase.
+- Vulnerability Assessment: Vulnerabilities found and their impact.
+- Exploitation: Actions performed and their results.
+- Post-Exploitation: Any escalation of privileges or pivoting performed.
+- Risk/Exposure: An estimation of the loss incurred if the attack would have been performed by an attacker. Quantitively describes the risk assessed by the pentest.
+- Conclusion: Final overview of the test.
+
+## References
+
+- [Georgia Weidman's book "Penetration Testing - A Hands-On Introduction to Hacking" from No Starch Press](https://www.nostarch.com/pentesting)
+- [Penetration Testing Execution Standard (PTES)](http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines)
