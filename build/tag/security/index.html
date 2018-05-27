@@ -11,7 +11,7 @@
 
 
 
-    <title>NVH's Site</title>
+    <title>Security - NVH's Site</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
@@ -27,19 +27,19 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="Personal blog on technology" />
     <link rel="shortcut icon" href="http://localhost:4000/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="http://localhost:4000/" />
+    <link rel="canonical" href="http://localhost:4000/tag/security/" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="NVH's Site" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="NVH's Site" />
+    <meta property="og:title" content="Security - NVH's Site" />
     <meta property="og:description" content="Personal blog on technology" />
-    <meta property="og:url" content="http://localhost:4000/" />
+    <meta property="og:url" content="http://localhost:4000/tag/security/" />
     <meta property="og:image" content="http://localhost:4000/assets/images/binarybanner.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/nvhaver" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="NVH's Site" />
+    <meta name="twitter:title" content="Security - NVH's Site" />
     <meta name="twitter:description" content="Personal blog on technology" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/binarybanner.jpg" />
@@ -59,7 +59,7 @@
         "name": "NVH's Site",
         "logo": "http://localhost:4000/"
     },
-    "url": "http://localhost:4000/",
+    "url": "http://localhost:4000/tag/security/",
     "image": {
         "@type": "ImageObject",
         "url": "http://localhost:4000/assets/images/binarybanner.jpg",
@@ -68,7 +68,7 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://localhost:4000/"
+        "@id": "http://localhost:4000/tag/security/"
     },
     "description": "Personal blog on technology"
 }
@@ -83,32 +83,31 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="NVH's Site" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Tag Page" href="/feed.xml" />
 
 
 </head>
-<body class="home-template">
+<body class="tag-template">
 
     <div class="site-wrapper">
         <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
-        <!-- < default -->
-<!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template -->
+        <!-- default -->
+<!-- The tag above means - insert everything in this file into the {body} of the default.hbs template -->
 
 <!-- The big featured header, it uses blog cover image as a BG if available -->
-<header class="site-header outer " style="background-image:  url(/assets/images/binarybanner.jpg) ">
+<!-- #tag -->
+<!-- dynamically loading backgrounds for tags,  descriptions and page titles -->
+
+
+<header class="site-header outer no-cover">
     <div class="inner">
-        <div class="site-header-content">
-            <h1 class="site-title">
-                
-                    NVH's Site
-                
-            </h1>
-            <h2 class="site-description">Personal blog on technology</h2>
-        </div>
         <nav class="site-nav">
     <div class="site-nav-left">
-	    <!---->
+	    <!--
+            
+                <a class="site-nav-logo" href="http://localhost:4000">NVH's Site</a>
+            
+		    -->
         
             <ul class="nav" role="menu">
     <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
@@ -138,17 +137,25 @@ into the {body} of the default.hbs template -->
     </div>
 </nav>
 
+        <div class="site-header-content">
+            <h1 class="site-title">Security</h1>
+            <h2 class="site-description">
+                
+    			    A collection of 1 posts
+                
+            </h2>
+        </div>
     </div>
 </header>
+<!-- tag -->
 
 <!-- The main content area -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
-
         <div class="post-feed">
             <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
             
-    <article class="post-card home-template">
+    <article class="post-card tag-template">
         
             <a class="post-card-image-link" href="/OSCP-part0">
                 <div class="post-card-image" style="background-image: url(/assets/images/security.jpg)"></div>
@@ -188,7 +195,6 @@ into the {body} of the default.hbs template -->
 
 
         </div>
-
     </div>
 </main>
 
