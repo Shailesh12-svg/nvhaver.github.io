@@ -8,9 +8,9 @@ language: 'en-uk'
 baseurl: /
 
 # Website info
-title: NVH's Site
-subtitle: Home
-description: Personal blog on technology
+title: The Secure Coding Bar
+#subtitle: Home
+description: Pull up a chair, have some secure code, enjoy life
 cover: assets/images/binarybanner.jpg
 #logo: assets/images/floppies.jpg
 #logo_dark: assets/images/favicon.png
