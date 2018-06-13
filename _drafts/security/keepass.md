@@ -12,21 +12,27 @@ author: nvhaver
 ---
 Ever had the problem of having to remember too many passwords? Or did you every reuse a password? You know it is bad practice to do so, but what else can you do when every service you use needs a separate account with separate credentials?
 
-That's where a password manager comes in. Basically a password manager is a secure management system. They come in many different form butthe two most prevalent formats are online services, such as [LastPass](), and offline databases, like [KeePass](). Both provide encrypted and secure storage of your passwords but differ in the trust model and ease of use.
+That's where a password manager comes in. Basically a password manager is a secure management system. They come in many different form butthe two most prevalent formats are online services, such as [LastPass](https://www.lastpass.com), and offline databases, like [KeePass](https://keepass.info). Both provide encrypted and secure storage of your passwords but differ in the trust model and ease of use.
 
 ## Types of Password Managers
 
-Online password managers seem to entail that you need to trust the company hosting the online service. However, as been [proven in the past](), as long as the provider properly implements the encryption used and does not implement any backdoors, your passwords are completely safe. Neither the provider, nor the government can decrypt your data as you should be the only one with access to the passwords. That being said, if you lose your master password, nobody will be able to help you out. Most often, a browser plugin is available to easily use your password database.
+Online password managers seem to entail that you need to trust the company hosting the online service. However, as been [proven in the past](https://lifehacker.com/lastpass-hacked-time-to-change-your-master-password-1711463571), as long as the provider properly implements the encryption used and does not implement any backdoors, your passwords are completely safe. Neither the provider, nor the government can decrypt your data as you should be the only one with access to the passwords. That being said, if you lose your master password, nobody will be able to help you out. Most often, a browser plugin is available to easily use your password database.
 
-My preference, however, is the offline model. As there is no external server, there is no other party on which you depend. There is no other player who you need to be concerned about. There is only your encrypted storage and your (compound) master key. Again, this means that nobody will be there to save you when you would forget your password. An added complexity in this case is that you are also responsible for distributing your password database across all the devices where you need your passwords. In the case of KeePass, there are many projects that port KeePass to other operating systems, such as [KeePass2Android]().
+My preference, however, is the offline model. As there is no external server, there is no other party on which you depend. There is no other player who you need to be concerned about. There is only your encrypted storage and your (compound) master key. Again, this means that nobody will be there to save you when you would forget your password. An added complexity in this case is that you are also responsible for distributing your password database across all the devices where you need your passwords. In the case of KeePass, there are many projects that port KeePass to other operating systems, such as [KeePass2Android](https://play.google.com/store/apps/details?id=keepass2android.keepass2android).
 
 ## KeePass
 
 So now that we covered what a password manager is, we'll dive deeper into working with KeePass, my go-to tool for all needs password-ish.
 
+### Basic Usage
+
+First things first, getting KeePass and setting up your database. So head over to the [KeePass download page](https://keepass.info/download.html) and grab yourself an installer. The installation process per platform is explained briefly there as well.
+
+Now open KeePass. TODO: What is the default when no database is present.
+
 ### Distributing your Database
 
-In order to get your database on all your devices, you can use a service like [Dropbox]() or [Google Drive](). Why do I recommend these services? Why not simply copy your password database to all your devices manually? Well, there are some requirements to suffice when it comes to passwords. One is that your password storage should be highly available. Using the services of these large companies ensures that this is the case. Moreover, there is no danger of leaking your passwords because the entire database is encrypted.
+In order to get your database on all your devices, you can use a service like [Dropbox](https://www.dropbox.com) or [Google Drive](https://www.google.com/drive). Why do I recommend these services? Why not simply copy your password database to all your devices manually? Well, there are some requirements to suffice when it comes to passwords. One is that your password storage should be highly available. Using the services of these large companies ensures that this is the case. Moreover, there is no danger of leaking your passwords because the entire database is encrypted.
 
 A second reason is synchronisation. KeePass does include a very handy merge feature, however, this feature is used to merge local password databases, meaning that you would still have to merge all databases on all your devices manually. To prevent this, it is easier to let the online storage handle this synchronisation. In case there would be changes on multiple devices, or instance when you create accounts on different devices, the merge functionality can be used to merge conflicting copies in the online storage.
 
@@ -45,7 +51,7 @@ Note that the last one is crucial the first time you set up your keepass solutio
 
 The password used to unlock your password database determines the security for all your stored passwords. It is the key to your kingdom. As such, you should make sure that that password is highly resistant to brute-force attacks and guessing attacks. You can use a compound key by using a file as part of the login procedure. In that case you require something you know (password) and something you have (key file) to unlock your database. However this seems to be the way to go, bear in mind it is up to you to get the key file everywhere you need to access your database.
 
-Alternatively, a secure token, such as a [Yubikey]() could be used. Again, you need to make sure this token is compatible with the devices on which you need to access your password database.
+Alternatively, a secure token, such as a [Yubikey](https://www.yubico.com/) could be used. Again, you need (to make sure this token is compatible with the devices on which you need to access your password database.
 
 To go one step further in securing your password database, you can opt to change the encryption algorithm used from AES to something more exotic (e.g. [ChaCha20](https://tools.ietf.org/html/rfc7539)). Note however that not all ports of KeePass support these algorithms and the lastest format of KeePass databases. In addition to that you can also change the key derivation algorithm and fine-tune its settings. These steps are not required as KeePass already uses highly secure standards, but can be interesting to tweak.
 
@@ -62,7 +68,7 @@ This way your passwords are again a bit safer.
 
 ### Plug-ins
 
-KeePass on its own already is very powerful, but combined with the following plug-ins, it really becomes a complete toolset for working with passwords and even keypairs.
+KeePass on its own already is very powerful, but combined with the following plug-ins, it really becomes a complete toolset for working with passwords and even keypairs. An overview of all availanle plug-ins can be found on the [KeePass plugn page](https://keepass.info/plugins.html).
 
 #### Installing a plug-in
 
@@ -110,7 +116,7 @@ In particular, I'd like to thank Dries Eestermans for showing me new ways to use
 
 ## References
 
-- [LastPass homepage]()
-- [KeePass homepage](http://keepass.info/)
-- [LastPass hack article]()
-- [KeePass plugins page]()
+- [LastPass homepage](https://www.lastpass.com)
+- [KeePass homepage](https://keepass.info/)
+- [LastPass hack article on LifeHacker](https://lifehacker.com/lastpass-hacked-time-to-change-your-master-password-1711463571)
+- [KeePass plugins page](https://keepass.info/plugins.html)
