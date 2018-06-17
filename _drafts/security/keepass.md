@@ -12,7 +12,7 @@ author: nvhaver
 ---
 Ever had the problem of having to remember too many passwords? Or did you every reuse a password? You know it is bad practice to do so, but what else can you do when every service you use needs a separate account with separate credentials?
 
-That's where a password manager comes in. Basically a password manager is a secure management system. They come in many different form butthe two most prevalent formats are online services, such as [LastPass](https://www.lastpass.com), and offline databases, like [KeePass](https://keepass.info). Both provide encrypted and secure storage of your passwords but differ in the trust model and ease of use.
+That's where a password manager comes in. Basically a password manager is a secure management system to store your passwords. They come in many different form but the two most prevalent formats are online services, such as [LastPass](https://www.lastpass.com), and offline databases, like [KeePass](https://keepass.info). Both provide encrypted and secure storage of your passwords but differ in the trust model and ease of use.
 
 ## Types of Password Managers
 
@@ -28,15 +28,17 @@ So now that we covered what a password manager is, we'll dive deeper into workin
 
 First things first, getting KeePass and setting up your database. So head over to the [KeePass download page](https://keepass.info/download.html) and grab yourself an installer. The installation process per platform is explained briefly there as well.
 
-Now open KeePass. TODO: What is the default when no database is present.
+Now open KeePass. It  
+
+TODO: What is the default when no database is present.
 
 ### Distributing your Database
 
-In order to get your database on all your devices, you can use a service like [Dropbox](https://www.dropbox.com) or [Google Drive](https://www.google.com/drive). Why do I recommend these services? Why not simply copy your password database to all your devices manually? Well, there are some requirements to suffice when it comes to passwords. One is that your password storage should be highly available. Using the services of these large companies ensures that this is the case. Moreover, there is no danger of leaking your passwords because the entire database is encrypted.
+In order to get your database on all your devices, you can use a cloud storage service like [Dropbox](https://www.dropbox.com). Why do I recommend these services? Why not simply copy your password database to all your devices manually? Well, there are some requirements to suffice when it comes to passwords. One is that your password storage should be highly available. Using the services of these large companies ensures that this is the case. Moreover, there is no danger of leaking your passwords because the entire database is encrypted.
 
-A second reason is synchronisation. KeePass does include a very handy merge feature, however, this feature is used to merge local password databases, meaning that you would still have to merge all databases on all your devices manually. To prevent this, it is easier to let the online storage handle this synchronisation. In case there would be changes on multiple devices, or instance when you create accounts on different devices, the merge functionality can be used to merge conflicting copies in the online storage.
+A second reason is synchronisation. KeePass does include a very handy merge feature, however, this feature is used to merge local password databases, meaning that you would still have to merge all databases on all your devices manually. To prevent this, it is easier to let the online storage handle this synchronisation. In case there would be changes on multiple devices, or instance when you create accounts on different devices, the merge functionality can be used to merge conflicting copies in the online storage. Being able to go back in time and retrieve an older version of your password database may also be a blessing. This feature is also offered by most cloud storage services.
 
-Being able to go back in time and retrieve an older version of your password database may also be a blessing. Both Dropbox and Google Drive offer this functionality.
+The service I recommend for the use case of password management is Dropbox. I tried working with Google Drive, but I quickly encountered some issues. A first issue is that Google is not clear on what happens in case of conflicting versions of the same file. We don't want the service to prefer one version over another as this might mean that newly created passwords may be overwitten or discarded by another conflicting copy of the database. A second and even more pressing issue is how Google Drive works on the different platforms. On Linux for example, the Google Drive folder is not a physical folder which can be navigated to on the disk. Instead it is a virtual folder which is only available from the Nautilus file browser. The folder represents the connection to the linked Google account and as such requires an active internet connection to function. This is definitely a no-go.
 
 ### Caveats
 
