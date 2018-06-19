@@ -28,32 +28,8 @@ So now that we covered what a password manager is, we'll dive deeper into workin
 
 First things first, getting KeePass and setting up your database. So head over to the [KeePass download page](https://keepass.info/download.html) and grab yourself an installer. The installation process per platform is explained briefly there as well.
 
-Now open KeePass. It  
-
-TODO: What is the default when no database is present.
-
-### Distributing your Database
-
-In order to get your database on all your devices, you can use a cloud storage service like [Dropbox](https://www.dropbox.com). Why do I recommend these services? Why not simply copy your password database to all your devices manually? Well, there are some requirements to suffice when it comes to passwords. One is that your password storage should be highly available. Using the services of these large companies ensures that this is the case. Moreover, there is no danger of leaking your passwords because the entire database is encrypted.
-
-A second reason is synchronisation. KeePass does include a very handy merge feature, however, this feature is used to merge local password databases, meaning that you would still have to merge all databases on all your devices manually. To prevent this, it is easier to let the online storage handle this synchronisation. In case there would be changes on multiple devices, or instance when you create accounts on different devices, the merge functionality can be used to merge conflicting copies in the online storage. Being able to go back in time and retrieve an older version of your password database may also be a blessing. This feature is also offered by most cloud storage services.
-
-The service I recommend for the use case of password management is Dropbox. I tried working with Google Drive, but I quickly encountered some issues. A first issue is that Google is not clear on what happens in case of conflicting versions of the same file. We don't want the service to prefer one version over another as this might mean that newly created passwords may be overwitten or discarded by another conflicting copy of the database. A second and even more pressing issue is how Google Drive works on the different platforms. On Linux for example, the Google Drive folder is not a physical folder which can be navigated to on the disk. Instead it is a virtual folder which is only available from the Nautilus file browser. The folder represents the connection to the linked Google account and as such requires an active internet connection to function. This is definitely a no-go.
-
-### Caveats
-
-Note that you still need to remember a few passwords. These are:
-
-- The password to boot your pc
-- The password to log into your account
-- The password to unlock your password database
-- The password to access your online version of the password database
-
-Note that the last one is crucial the first time you set up your keepass solution. Imagine that you are confident you have all your passwords with you whereever you go to then realize that you cannot access your online storage and thus your online passwords. One way to prevent this from happening, is to have another device which contains a copy of your password database (either online or offline). A smartphone would do the trick.
-
-The password used to unlock your password database determines the security for all your stored passwords. It is the key to your kingdom. As such, you should make sure that that password is highly resistant to brute-force attacks and guessing attacks. You can use a compound key by using a file as part of the login procedure. In that case you require something you know (password) and something you have (key file) to unlock your database. However this seems to be the way to go, bear in mind it is up to you to get the key file everywhere you need to access your database.
-
-Alternatively, a secure token, such as a [Yubikey](https://www.yubico.com/) could be used. Again, you need (to make sure this token is compatible with the devices on which you need to access your password database.
+Now open KeePass and create a new password database.
+########################## TODO
 
 To go one step further in securing your password database, you can opt to change the encryption algorithm used from AES to something more exotic (e.g. [ChaCha20](https://tools.ietf.org/html/rfc7539)). Note however that not all ports of KeePass support these algorithms and the lastest format of KeePass databases. In addition to that you can also change the key derivation algorithm and fine-tune its settings. These steps are not required as KeePass already uses highly secure standards, but can be interesting to tweak.
 
@@ -67,6 +43,34 @@ The KeePass default security settings, however, do need some tweaking. In order 
 - Clear master key command line parameters after using them once
 
 This way your passwords are again a bit safer.
+
+### Distributing your Database
+
+Great, now we have set up our password database! However we only have it in one place... In order to get your database on all your devices, you can use a cloud storage service like [Dropbox](https://www.dropbox.com). Why would I, the tin foil guy in the room, recommend these kinds of services? Why not simply copy your password database to all your devices manually? Or host our own storage solution? Well, there are some requirements to suffice when it comes to our passwords. One is that your password storage should be highly available. Using the services of these large companies ensures that this is the case. Moreover, there is no danger of leaking your passwords because the entire database is encrypted.
+
+A second reason is synchronisation. KeePass does include a very handy merge feature, however, this feature is used to merge local password databases, meaning that you would still have to merge all databases on all your devices manually. To prevent this, it is easier to let the online storage handle this synchronisation. In case there would be changes on multiple devices, or instance when you create accounts on different devices, the merge functionality can be used to merge conflicting copies in the online storage. Being able to go back in time and retrieve an older version of your password database may also be a blessing. This feature is also offered by most cloud storage services.
+
+The service I recommend for the use case of password management is Dropbox. I tried working with Google Drive, but I quickly encountered some issues. A first issue is that Google is not clear on what happens in case of conflicting versions of the same file. We don't want the service to prefer one version over another as this might mean that newly created passwords may be overwitten or discarded by another conflicting copy of the database. A second and even more pressing issue is how Google Drive works on the different platforms. On Linux for example, the Google Drive folder is not a physical folder which can be navigated to on the disk. Instead it is a virtual folder which is only available from the Nautilus file browser. The folder represents the connection to the linked Google account and as such requires an active internet connection to function. This is definitely a no-go.
+
+### Caveats
+
+#### Passwords you still need to remember
+Note that you still need to remember a few passwords. These are:
+
+- The password to boot your pc
+- The password to log into your account
+- The password to unlock your password database
+- The password to access your online version of the password database
+
+Note that the last one is crucial the first time you set up your keepass solution. Imagine that you are confident you have all your passwords with you whereever you go to then realize that you cannot access your online storage and thus your online passwords. One way to prevent this from happening, is to have another device which contains a copy of your password database (either online or offline). A smartphone would do the trick.
+
+The password used to unlock your password database determines the security for all your stored passwords. It is the key to your kingdom. As such, you should make sure that that password is highly resistant to brute-force attacks and guessing attacks. You can use a compound key by using a file as part of the login procedure. In that case you require something you know (password) and something you have (key file) to unlock your database. However this seems to be the way to go, bear in mind it is up to you to get the key file everywhere you need to access your database.
+
+Alternatively, a secure token, such as a [Yubikey](https://www.yubico.com/) could be used. Again, you need (to make sure this token is compatible with the devices on which you need to access your password database.
+
+#### Synchronisation Conflicts
+
+When working with services like Dropbox we need to be careful not to create any conflicting copies of the password database. Storage providers will often not care about conflict resolution and only retain the latest version of your password database. As such, when the database is updated offline in two places, only one of these files will be retained. There is no guarantee on what happens to the other version of the database. In my experiments, using my desktop and phone to deliberately create a conflict, the database on the phone was overwritten without any way of recovering the entries which were created on the phone offline. Therefore, I recommend to avoid this scenario if possible. Having the discipline to ensure everything is synced after modifying the database is a must.
 
 ### Plug-ins
 
@@ -122,3 +126,4 @@ In particular, I'd like to thank Dries Eestermans for showing me new ways to use
 - [KeePass homepage](https://keepass.info/)
 - [LastPass hack article on LifeHacker](https://lifehacker.com/lastpass-hacked-time-to-change-your-master-password-1711463571)
 - [KeePass plugins page](https://keepass.info/plugins.html)
+- [cf zero's post on KeePass mobile sync](https://cfzero.wordpress.com/2014/06/07/sync-keepass-mobile-dropbox-security/)
