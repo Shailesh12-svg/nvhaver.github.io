@@ -10,7 +10,7 @@ class: post-template
 subclass: 'post'
 author: nvhaver
 ---
-Ever had the problem of having to remember too many passwords? Or did you every reuse a password? You know it is bad practice to do so, but what else can you do when every service you use needs a separate account with separate credentials?
+Ever had the problem of having to remember too many passwords? Or did you every reuse a password? You know it is bad practice to do so, but what else can you do when every service you use needs a separate account with separate credentials? You want your passwords to be memorable, but this makes them easy to guess. And we all know [where](https://arstechnica.com/information-technology/2013/10/how-the-bible-and-youtube-are-fueling-the-next-frontier-of-password-cracking/) that [leads...](https://arstechnica.com/information-technology/2013/10/izmy-p55w0rd-saph/)
 
 That's where a password manager comes in. Basically a password manager is a secure management system to store your passwords. They come in many different form but the two most prevalent formats are online services, such as [LastPass](https://www.lastpass.com), and offline databases, like [KeePass](https://keepass.info). Both provide encrypted and secure storage of your passwords but differ in the trust model and ease of use.
 
