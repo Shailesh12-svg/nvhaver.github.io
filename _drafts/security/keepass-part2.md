@@ -10,7 +10,7 @@ class: post-template
 subclass: 'post'
 author: nvhaver
 ---
-In the previous post in this series, we've learned how to use a single KeePass database. This time, we set our focus on a more elaborate scenario in which multiple databases and different platforms are combined.
+In the previous post in this series, we've learned how to use a single KeePass database. This time, we set our focus on a more elaborate scenario in which multiple databases and different platforms are combined. On top of that, we'll check out some powerful plugins that will take your KeePass experience to the next level.
 
 ### Distributing your Database
 
