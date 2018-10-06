@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> - Articles</title>
+    <description>Pull up a chair, have some secure code, enjoy life</description>
+    <link>
+    </link>
+    
+      
+      <item>
+        <title>OSCP - Part 1 - The Phases of Pentesting</title>
+        
+          <description>&lt;p&gt;In this second installment of the OSCP series, we will take a deeper look into the overall structure of a penetration test, as it provides us a framework to build our hacking skills onto. It is also the first thing that we read in the introduction of &lt;a href=&quot;https://www.nostarch.com/pentesting&quot;&gt;Georgia Weidman’s book “Penetration Testing - A Hands-On Introduction to Hacking” from No Starch Press&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 27 May 2018 14:00:00 +0000</pubDate>
+        <link>
+        /OSCP-part1</link>
+        <guid isPermaLink="true">/OSCP-part1</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>OSCP - Part 0 - Overview</title>
+        
+          <description>&lt;p&gt;As I have a deep interest in cybersecurity, I felt is time to get serious and to set a clear goal. So my goal will be the &lt;a href=&quot;https://www.offensive-security.com/information-security-certifications/oscp-offensive-security-certified-professional/&quot;&gt;Offensive Security Certified Professional (OSCP)&lt;/a&gt; certificate.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 27 May 2018 13:00:00 +0000</pubDate>
+        <link>
+        /OSCP-part0</link>
+        <guid isPermaLink="true">/OSCP-part0</guid>
+      </item>
+      
+    
+  </channel>
+</rss>

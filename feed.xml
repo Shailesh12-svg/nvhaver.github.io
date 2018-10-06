@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-10-06T21:46:34+00:00</updated><id>/</id><title type="html">The Secure Coding Bar</title><subtitle>Pull up a chair, have some secure code, enjoy life</subtitle><entry><title type="html">OSCP - Part 1 - The Phases of Pentesting</title><link href="/OSCP-part1" rel="alternate" type="text/html" title="OSCP - Part 1 - The Phases of Pentesting" /><published>2018-05-27T14:00:00+00:00</published><updated>2018-05-27T14:00:00+00:00</updated><id>/OSCP-part1</id><content type="html" xml:base="/OSCP-part1">&lt;p&gt;In this second installment of the OSCP series, we will take a deeper look into the overall structure of a penetration test, as it provides us a framework to build our hacking skills onto. It is also the first thing that we read in the introduction of &lt;a href=&quot;https://www.nostarch.com/pentesting&quot;&gt;Georgia Weidman’s book “Penetration Testing - A Hands-On Introduction to Hacking” from No Starch Press&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The phases described by Weidman are taken from the &lt;a href=&quot;http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines&quot;&gt;Penetration Testing Execution Standard (PTES)&lt;/a&gt;. This standard also comes with a technical guideline which details each phase and indicates the tools that can be used.&lt;/p&gt;
+
+&lt;p&gt;Globally speaking, a penetration test has the following seven phases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Pre-engagement: Defining scope, goals and reporting format with the client.&lt;/li&gt;
+  &lt;li&gt;Information Gathering: Search for publicly available information and potential ways to connect to the target systems.&lt;/li&gt;
+  &lt;li&gt;Threat Modeling: Determine value of findings and impact if breach occurs.&lt;/li&gt;
+  &lt;li&gt;Vulnerability Analysis: Discovery of vulnerabilities to take advantage of.&lt;/li&gt;
+  &lt;li&gt;Exploitation: Actual exploitation of the found vulnerabilities.&lt;/li&gt;
+  &lt;li&gt;Post-exploitation: Discovery of additional information after breaching the environment.&lt;/li&gt;
+  &lt;li&gt;Reporting: Summarizing the results of the penetration test for both executives and technical staff.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here I will briefly discuss each phase, but the full elaboration will be done in later blogs posts.&lt;/p&gt;
+
+&lt;h2 id=&quot;pre-engagement&quot;&gt;Pre-engagement&lt;/h2&gt;
+
+&lt;p&gt;In this phase the goal is to ensure both parties, the client and the pentester, are on the same page about the scope of the penetration test. The client needs to be aware that a penetration test is more intrusive than a regular assessment. As such it might uncover unexpected issues and may lead to sticky situations.&lt;/p&gt;
+
+&lt;p&gt;Some important questions to pose in this first contact are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What prompted the client to get a pentest?&lt;/li&gt;
+  &lt;li&gt;What exposures is the client most worried about?&lt;/li&gt;
+  &lt;li&gt;Are there fragile devices present which the pentester needs to approach carefully?&lt;/li&gt;
+  &lt;li&gt;What is the goal of the client’s business?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The goal here is to find out what matters most to the client. This way we ensure the pentest will be targeted and that it will provide as much added value as possible. For one client an hour of downtime may have a completely different impact than for others.&lt;/p&gt;
+
+&lt;p&gt;The scope of the pentest is one of the most important topics to discuss in this phase. In this regard, the following questions apply:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Which devices are in scope and which are not? (Based on IP address or hostname)&lt;/li&gt;
+  &lt;li&gt;Which actions are allowed? (i.e. can services or host be brought down or should the test be limited to the detection of vulnerabilities?)&lt;/li&gt;
+  &lt;li&gt;Does the client understand that performing a port scan could bring down a server or router?&lt;/li&gt;
+  &lt;li&gt;Is social engineering allowed?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Next to the scope, the testing window needs to be determined as well. It might be the case that the client does not want the testing to be done during business hours.&lt;/p&gt;
+
+&lt;p&gt;When things would get hairy, you also need to be prepared. First of all contact information needs to be gathered so that when an issue or unexpected result would present itself, someone on the client’s side can be contacted. Questions that apply here are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Who needs to be contacted when something serious is found?&lt;/li&gt;
+  &lt;li&gt;Is there someone who can be contacted 24/7?&lt;/li&gt;
+  &lt;li&gt;How are these issues communicated? (e.g. email encryption)&lt;/li&gt;
+  &lt;li&gt;What actions should be taken in case something serious happens?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In addition to these precautions, a “get out of jail free” card should be negotiated. This card needs to prove that you are authorized to perform the penetration test. When the system under test is hosted or managed by a third party, this card should also cover the terms negotiated by the client with the third party. Regardless, the contract must include a statement which limits the tester’s liability in case something unexpected happens and a written permission to perform the penetration test.&lt;/p&gt;
+
+&lt;p&gt;As a pentest deals with highly sensitive information on the client and its customers, the contract also needs to include a nondisclosure agreement (NDA) clause.&lt;/p&gt;
+
+&lt;p&gt;Finally, as this is a service, payment terms need to be negotiated.&lt;/p&gt;
+
+&lt;h2 id=&quot;information-gathering&quot;&gt;Information Gathering&lt;/h2&gt;
+
+&lt;p&gt;A more formal name for this process is Open Source Intelligence (OSINT). This phase involves looking for information online and through passive scanners. Footprinting, banner grabbing and version scanning also covered in this phase, as long as this is not done in an active way.&lt;/p&gt;
+
+&lt;h2 id=&quot;vulnerability-analysis&quot;&gt;Vulnerability Analysis&lt;/h2&gt;
+
+&lt;p&gt;Once enough information has been collected, it is time to actively discover vulnerabilities. These vulnerabilities must be analyzed to determine whether they can be used in the next steps. All vulnerabilities need to be logged as findings, but not all vulnerabilities might be useful as they might alert users and administrators about the presence of the tester.&lt;/p&gt;
+
+&lt;p&gt;To discover these vulnerabilities, vulnerability scanners can be used. The difference with the previous phase is that here the tester will use active ways of scanning. To determine the severity and the use of a vulnerability, several online sources can be used, such as vulnerability databases.&lt;/p&gt;
+
+&lt;p&gt;Even though there are many automated ways to discover these vulnerabilities, manual testing cannot be underestimated and will always be required in this phase.&lt;/p&gt;
+
+&lt;h2 id=&quot;exploitation&quot;&gt;Exploitation&lt;/h2&gt;
+
+&lt;p&gt;In this phase the vulnerabilities which have been discovered and deemed useful are exploited. This is where tools like Metasploit come into play.&lt;/p&gt;
+
+&lt;h2 id=&quot;post-exploitation&quot;&gt;Post-exploitation&lt;/h2&gt;
+
+&lt;p&gt;In the previous phase we executed exploits to gain access to systems. Now the question is, what can we do with these systems? The answer is pivoting. Pivoting is leveraging an obtained access to gain additional access and privileges on other systems. For instance, if the system is part of a domain, a pentester would try to gain access to the domain controller for that domain. One way to gain additional access would be to dump out hashed passwords and attempt to reverse the hashing. Furthermore, we can assess the risk of the hack we performed by looking for interesting files.&lt;/p&gt;
+
+&lt;h2 id=&quot;reporting&quot;&gt;Reporting&lt;/h2&gt;
+
+&lt;p&gt;In this final phase, we collect all our findings and present them to the client. Note that this means that the information must be readable for executives, while technical and detailed enough for the technical staff who needs to act on the findings. Also, it is important to not only point out the issues in the environments and systems, but also what has been done correctly. In order to ensure clarity in the report, it should always contain both an executive summary and a detailed technical report.&lt;/p&gt;
+
+&lt;p&gt;The executive summary should include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Background: Provides definitions of terms which may be unfamiliar to executives. It also provides the purpose and goals of the test.&lt;/li&gt;
+  &lt;li&gt;Overall Security Posture: An overview of the current state of the overall security level, including which general underlying issues were found.&lt;/li&gt;
+  &lt;li&gt;Risk Profile: A comparison of the current security posture compared to other similar organizations. The profile should be expressed in terms of priorities (high/moderate/low) and should clarify the meaning of these levels.&lt;/li&gt;
+  &lt;li&gt;General findings: An overview of the general issues found with their frequency, the efficiency of the countermeasures put in place and other statistics.&lt;/li&gt;
+  &lt;li&gt;Recommendation Summary: The high-level steps to be taken to remedy the issues discovered during the test.&lt;/li&gt;
+  &lt;li&gt;Strategic Road Map: Long- and short-term goals for the client to improve the security posture.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The technical report should at least cover all phases of the pentest:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Introduction: Contains the details on scope, contacts, etc.&lt;/li&gt;
+  &lt;li&gt;Information Gathering: The client’s internet footprint and other information retrieved during this phase.&lt;/li&gt;
+  &lt;li&gt;Vulnerability Assessment: Vulnerabilities found and their impact.&lt;/li&gt;
+  &lt;li&gt;Exploitation: Actions performed and their results.&lt;/li&gt;
+  &lt;li&gt;Post-Exploitation: Any escalation of privileges or pivoting performed.&lt;/li&gt;
+  &lt;li&gt;Risk/Exposure: An estimation of the loss incurred if the attack would have been performed by an attacker. Quantitatively describes the risk assessed by the pentest.&lt;/li&gt;
+  &lt;li&gt;Conclusion: Final overview of the test.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;whats-next&quot;&gt;What’s next?&lt;/h2&gt;
+
+&lt;p&gt;So next up is diving into &lt;a href=&quot;http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines&quot;&gt;the technical guidelines of the PTES&lt;/a&gt; and reading the next chapters in &lt;a href=&quot;https://www.nostarch.com/pentesting&quot;&gt;Weidman’s book&lt;/a&gt;. I will be skipping the chapters on the environment setup and programming as these will be covered outside this series.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.nostarch.com/pentesting&quot;&gt;Georgia Weidman’s book “Penetration Testing - A Hands-On Introduction to Hacking” from No Starch Press&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines&quot;&gt;Penetration Testing Execution Standard (PTES)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Nick Van Haver</name></author><category term="security" /><summary type="html">In this second installment of the OSCP series, we will take a deeper look into the overall structure of a penetration test, as it provides us a framework to build our hacking skills onto. It is also the first thing that we read in the introduction of Georgia Weidman’s book “Penetration Testing - A Hands-On Introduction to Hacking” from No Starch Press.</summary></entry><entry><title type="html">OSCP - Part 0 - Overview</title><link href="/OSCP-part0" rel="alternate" type="text/html" title="OSCP - Part 0 - Overview" /><published>2018-05-27T13:00:00+00:00</published><updated>2018-05-27T13:00:00+00:00</updated><id>/OSCP-part0</id><content type="html" xml:base="/OSCP-part0">&lt;p&gt;As I have a deep interest in cybersecurity, I felt is time to get serious and to set a clear goal. So my goal will be the &lt;a href=&quot;https://www.offensive-security.com/information-security-certifications/oscp-offensive-security-certified-professional/&quot;&gt;Offensive Security Certified Professional (OSCP)&lt;/a&gt; certificate.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-oscp&quot;&gt;Why OSCP?&lt;/h2&gt;
+
+&lt;p&gt;There are many other certificates which I could pursue, but the OSCP certificate to me feels like the real deal. The exam consists of an 24 hour penetration test which puts your skills to the test. The test simulates a real pentest by providing a network with targets of varying configurations and operating systems on it. The ones in scope need to be enumerated and exploited until administrative privileges are obtained. Like during a real pentest, everything needs to be documented. The final penetration test report should include in-depth notes and screenshots detailing the findings. As stated on the &lt;a href=&quot;https://www.offensive-security.com/information-security-certifications/oscp-offensive-security-certified-professional/&quot;&gt;OSCP page&lt;/a&gt;: Points are awarded for each compromised host, based on their difficulty and level of access obtained.&lt;/p&gt;
+
+&lt;p&gt;Once you have earned the OSCP certificate, you are able to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use multiple information gathering techniques to identify and enumerate targets running various operating systems and services.&lt;/li&gt;
+  &lt;li&gt;Write basic scripts and tools to aid in the penetration testing process.&lt;/li&gt;
+  &lt;li&gt;Analyze, correct, modify, cross-compile, and port public exploit code.&lt;/li&gt;
+  &lt;li&gt;Successfully conduct both remote and client side attacks.&lt;/li&gt;
+  &lt;li&gt;Identify and exploit XSS, SQL injection, and file inclusion vulnerabilities in web applications.&lt;/li&gt;
+  &lt;li&gt;Deploy tunneling techniques to bypass firewalls.&lt;/li&gt;
+  &lt;li&gt;Demonstrate creative problem solving and lateral thinking&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One caveat is that you can only take the exam after completing &lt;a href=&quot;https://www.offensive-security.com/information-security-training/penetration-testing-training-kali-linux/&quot;&gt;Offensive Security’s Penetration Testing with Kali Linux training course (PWK)&lt;/a&gt;. At this time, this is an online training which you can enroll in for $800. It provides you with a 30-day access to a lab environment over VPN.&lt;/p&gt;
+
+&lt;h2 id=&quot;other-certificates&quot;&gt;Other certificates&lt;/h2&gt;
+
+&lt;p&gt;After I will have obtained the OSCP certificate, I will start looking for a new challenge. The other certificates offered by Offensive Security also seem very interesting:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.offensive-security.com/information-security-certifications/osce-offensive-security-certified-expert/&quot;&gt;Offensive Security Certified Expert (OSCE)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.offensive-security.com/information-security-certifications/osee-offensive-security-exploitation-expert/&quot;&gt;Offensive Security Exploitation Expert (OSEE)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.offensive-security.com/information-security-certifications/oswe-offensive-security-web-expert/&quot;&gt;Offensive Security Web Expert (OSWE)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.offensive-security.com/information-security-certifications/oswp-offensive-security-wireless-professional/&quot;&gt;Offensive Security Wireless Professional (OSWP)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For the moment however, I think I will have my hands full with the OSCP challenge.&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting started&lt;/h2&gt;
+
+&lt;p&gt;Now that we have a clear goal set out, it is time to start working on our knowledge and skills in the field of penetration testing, but where do we start?&lt;/p&gt;
+
+&lt;p&gt;Let’s take a look at the contents of the PWK course. An outline can be found &lt;a href=&quot;https://www.offensive-security.com/documentation/penetration-testing-with-kali.pdf&quot;&gt;on the Offensive Security website&lt;/a&gt;. Here we can see several big topic to cover such as Kali Linux, programming, scripting, exploits and pentesting as a whole. However, it’s not practical to start taking on these topics at random, we need a more structured approach.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.cybrary.it&quot;&gt;Cybrary&lt;/a&gt; provides us a bit more structure by giving us a &lt;a href=&quot;https://www.cybrary.it/0p3n/prep-guide-offsecs-pwkoscp/&quot;&gt;short “must read” list&lt;/a&gt;. They also provide a curriculum to follow which includes their video tutorials, but I prefer to read the original source books instead.&lt;/p&gt;
+
+&lt;p&gt;After looking around on the web, I identified the following books as the most comprehensive sources:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.nostarch.com/pentesting&quot;&gt;Georgia Weidman’s book “Penetration Testing - A Hands-On Introduction to Hacking” from No Starch Press&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://nostarch.com/metasploit&quot;&gt;David Kennedy, Jim O’Gorman, Devon Kearns, and Mati Aharoni’s “Metasploit - The Penetration Tester’s Guide” from No Starch Press&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://repo.zenk-security.com/Programmation/Violent%20Python%20a%20Cookbook%20for%20Hackers-Forensic%20Analysts-Penetration%20testers%20and%20Security%20Engineers.pdf&quot;&gt;TJ. O’Connor’s book “Violent Python - A Cookbook for Hackers, Forensic Analysts, Penetration Testers and Security Engineers” from Syngress&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.packtpub.com/networking-and-servers/advanced-penetration-testing-highly-secured-environments-ultimate-security-gu&quot;&gt;Lee Allen’s “Advanced Penetration Testing for Highly-Secured Environments: The Ultimate Security Guide” from Packt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are many other books on the topics contained in the OSCP certification, but for now I will limit myself to the four above. There are also many other sources from people who attempted the OSCP challenge around the Web, which I list here as honorable mentions. I might dig deeper into these when I need some more details or would like to know about the experience of others.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://sushant747.gitbooks.io/total-oscp-guide/content/&quot;&gt;https://sushant747.gitbooks.io/total-oscp-guide/content/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://niiconsulting.com/checkmate/2017/06/a-detail-guide-on-oscp-preparation-from-newbie-to-oscp/&quot;&gt;http://niiconsulting.com/checkmate/2017/06/a-detail-guide-on-oscp-preparation-from-newbie-to-oscp/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://desmoines.issa.org/images/2017-February-Nate-Subra-OSCP.pdf&quot;&gt;http://desmoines.issa.org/images/2017-February-Nate-Subra-OSCP.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;lets-try-harder&quot;&gt;Let’s try harder&lt;/h2&gt;
+
+&lt;p&gt;So now that we have everything ready to get started, I will start by reading the book by Georgia Weidman. In the next posts of this series I will highlight my findings on additional sources and provide a small summary of the things I’ve learned.&lt;/p&gt;
+
+&lt;p&gt;Let’s get busy!&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.offensive-security.com/&quot;&gt;The official Offensive website&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cybrary.it&quot;&gt;Cybrary&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Nick Van Haver</name></author><category term="security" /><summary type="html">As I have a deep interest in cybersecurity, I felt is time to get serious and to set a clear goal. So my goal will be the Offensive Security Certified Professional (OSCP) certificate.</summary></entry></feed>
